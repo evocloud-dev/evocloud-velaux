@@ -35,7 +35,7 @@ export const renderIcon = (name: string, icon?: string, size?: string) => {
           lineHeight: '60px',
         }}
       >
-        <span style={{ color: '#1b58f4', fontSize: `2em` }}>{nameUpper(name)}</span>
+        <span style={{ color: '#204ceb', fontSize: `2em` }}>{nameUpper(name)}</span>
       </div>
     );
   }

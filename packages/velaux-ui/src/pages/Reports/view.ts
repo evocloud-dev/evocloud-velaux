@@ -85,7 +85,7 @@ export function pieRows(chart: ReportChart, series: string): Array<Record<string
   return [...rows.slice(0, pieSlices), { label: 'Other', [series]: other }];
 }
 
-export const statusColours = { bad: '#e5484d', good: '#00b578', waiting: '#ff8f1f', active: '#1b58f4' };
+export const statusColours = { bad: '#e5484d', good: '#00b578', waiting: '#ff8f1f', active: '#204ceb' };
 
 // statusColour is the colour a series or slice takes from what its label
 // means, a failure red and a success green, or undefined for a label that

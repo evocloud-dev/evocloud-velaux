@@ -2,6 +2,29 @@
 @import '@velaux/theme/dist/next.css';
 @import '@velaux/theme/variables.less';
 
+// Exo 2, the EvoCloud typeface (evocloud.dev/branding), bundled rather than
+// loaded from Google Fonts so it renders on intranet clusters with no internet
+// access. Variable fonts covering weights 400-700, split by script as Google
+// serves them; licensed under the OFL (assets/fonts/exo2/OFL.txt).
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./assets/fonts/exo2/exo2-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329,
+    U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Exo 2';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url('./assets/fonts/exo2/exo2-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329,
+    U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @border-radius-8: 8px;
 @F7F7F7: #f7f7f7;
 @F9F8FF: #f9f8ff;
@@ -19,7 +42,7 @@
 @colorA6A6A6: #a6a6a6;
 @color545454: #545454;
 
-@font-family-common: 'PingFangSC-Regular, sans-serif';
+@font-family-common: 'Exo 2', PingFangSC-Regular, sans-serif;
 
 @text-align-left: left;
 @text-align-center: center;
@@ -699,3 +722,6 @@ a {
   border: 1px solid #e2e8f0;
   border-radius: 8px;
 }
+
+// The EvoCloud brand, last so it wins over the defaults above.
+@import (less) './evocloud.less';

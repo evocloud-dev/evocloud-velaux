@@ -12,9 +12,13 @@ import {
   AiOutlineQuestionCircle,
 } from 'react-icons/ai';
 
-import logo from '../../assets/kubevela-logo-white.png';
-import logoMark from '../../assets/KubeVela-01.svg';
-import logoDark from '../../assets/kubevela-logo.png';
+// EvoCloud's lockups (evocloud.dev/branding): the light one for the sidebar,
+// which is white by default; the dark variant, with white lettering, for a
+// sidebar customised dark; the shield for the minimised rail. They carry their
+// own colours, so none is filtered.
+import logo from '../../assets/evocloud/evocloud-logo-dark.svg';
+import logoDark from '../../assets/evocloud/evocloud-logo.svg';
+import logoMark from '../../assets/evocloud/evocloud-mark.svg';
 import { loadCustomisation } from '../../api/customisation';
 import type { Customisation } from '../../services/CustomisationService';
 import { customisationService } from '../../services/CustomisationService';
@@ -222,7 +226,8 @@ class Header extends Component<Props, State> {
     const collapsed = !!this.props.collapsed;
     const { customisation } = this.state;
     const theme = sidebarTheme(customisation.sidebarColor, customisation.accentColor);
-    const light = !!customisation.sidebarColor && isLight(customisation.sidebarColor);
+    // EvoCloud's sidebar is white unless a colour is customised.
+    const light = customisation.sidebarColor ? isLight(customisation.sidebarColor) : true;
     const wordmark = customisation.logoURL || (light ? logoDark : logo);
     const logoSrc = collapsed ? customisation.iconURL || logoMark : wordmark;
     const userName = userInfo?.alias ? userInfo.alias : userInfo?.name;
@@ -230,11 +235,10 @@ class Header extends Component<Props, State> {
     return (
       <div className={classNames('layout-sidebar', { collapsed })} style={theme as React.CSSProperties}>
         <div className="sidebar-brand">
-          <Link to="/" className="sidebar-logo" title={'Make shipping applications more enjoyable.'}>
+          <Link to="/" className="sidebar-logo" title={'EvoCloud — Built for Secure Intranet Cloud'}>
             <img
               src={logoSrc}
               className={classNames({
-                'sidebar-logo-invert': collapsed && !customisation.iconURL && !light,
                 'sidebar-logo-plate': !collapsed && customisation.logoURL && !light,
               })}
             />

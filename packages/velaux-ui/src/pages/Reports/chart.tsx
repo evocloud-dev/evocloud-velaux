@@ -18,7 +18,7 @@ import {
 import type { ReportChart } from './view';
 import { chartRows, pieRows, statusColour } from './view';
 
-const palette = ['#1b58f4', '#00b578', '#ff8f1f', '#7c3aed', '#e5484d', '#0ea5e9', '#d946ef', '#64748b'];
+const palette = ['#204ceb', '#00b578', '#ff8f1f', '#7c3aed', '#e5484d', '#0ea5e9', '#d946ef', '#64748b'];
 const colour = (i: number) => palette[i % palette.length];
 // colourOf is a label's status colour, else the palette's i-th.
 const colourOf = (label: string, i: number) => statusColour(label) || colour(i);

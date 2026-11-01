@@ -193,7 +193,7 @@ export const ResourceIcon = ({ kind, customStyle }: { kind: string; customStyle?
     width: '32px',
     height: '32px',
     borderRadius: '50%',
-    backgroundColor: '#1b58f4',
+    backgroundColor: '#204ceb',
     textAlign: 'center',
     lineHeight: '30px',
     ...customStyle,

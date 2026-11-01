@@ -401,7 +401,7 @@ class Header extends Component<Props, State> {
                         <If condition={item.endpoint.portName}>
                           <span className="margin-right-5">{item.endpoint.portName}:</span>
                         </If>
-                        <a style={{ color: '#1b58f4' }} target="_blank" href={linkURL} rel="noopener noreferrer">
+                        <a style={{ color: '#204ceb' }} target="_blank" href={linkURL} rel="noopener noreferrer">
                           {linkURL}
                         </a>
                       </Menu.Item>

@@ -1,0 +1,360 @@
+// EvoCloud theme: the brand of evocloud.dev/branding laid over VelaUX.
+//
+// Imported last from theme-default.less, whose bundle loads after the app's,
+// so each rule here wins over VelaUX's own at the same specificity. VelaUX's
+// stylesheets are left as they are: the brand lives in this one file, and
+// upstream changes to them still merge cleanly.
+//
+// All light, as evocloud.dev is in its light mode. VelaUX has no dark mode —
+// its colours are written into each stylesheet — so the frame is light too
+// rather than a dark sidebar beside a light page. Brand blue carries action and
+// place: buttons, links, focus, the sidebar's current item. Gold is used only
+// where it can be the brand's own #f7b500 — as a mark, never as text or a tint,
+// both of which turn it mustard or cream on white: the bars beside a page's
+// title and the sidebar's current item, the active tab's rule, the line under
+// the top bar and the brand. Indigo only appears as depth, at the far end of a
+// blue gradient.
+
+@ec-ink: #0b1120;
+@ec-ink-2: #0f172a;
+
+@ec-blue: #204ceb;
+@ec-blue-600: #1e40d8;
+@ec-blue-700: #1b38b8;
+@ec-blue-50: #eef2ff;
+@ec-gold: #f7b500;
+@ec-indigo: #6366f1;
+
+@ec-surface: #f8fafc;
+@ec-surface-2: #f1f5f9;
+@ec-border: #e5e7eb;
+@ec-text: #0f172a;
+@ec-body: #334155;
+@ec-muted: #64748b;
+
+@ec-radius: 12px;
+@ec-shadow: 0 1px 2px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.06);
+@ec-shadow-lift: 0 12px 28px -10px rgba(15, 23, 42, 0.2);
+
+// Blue into indigo, the brand's "gradients and depth".
+@ec-action: linear-gradient(135deg, @ec-blue 0%, #3347e6 60%, @ec-indigo 100%);
+@ec-action-hover: linear-gradient(135deg, @ec-blue-600 0%, #2c3dd2 60%, #5558e6 100%);
+
+/* ------------------------------------------------------------------ frame */
+
+// The sidebar's defaults: white, with ink text and the current item in brand
+// blue on its palest tint. The Settings > Customisation colours still win when
+// set, as inline styles — an accent set there replaces this blue.
+.layout-sidebar {
+  --sb-text: @ec-body;
+  --sb-text-strong: @ec-text;
+  --sb-muted: @ec-muted;
+  --sb-hover: rgba(15, 23, 42, 0.05);
+  --sb-active: @ec-blue-50;
+  --sb-active-text: @ec-blue-700;
+  --sb-accent: @ec-blue;
+  --sb-border: @ec-border;
+  background: var(--sb-bg, #fff);
+}
+
+.sidebar-brand {
+  border-bottom: 1px solid var(--sb-border);
+}
+
+.menu-item-text-active {
+  color: var(--sb-active-text) !important;
+  font-weight: 600;
+}
+
+.slide-wrapper .nav-container .main-nav {
+  position: relative;
+  color: @ec-muted;
+  letter-spacing: 0.14em;
+  // A gold dash in the gutter before each section, clear of the text.
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 8px;
+    height: 2px;
+    background: @ec-gold;
+    border-radius: 1px;
+    transform: translateY(-50%);
+    content: '';
+  }
+}
+
+// Gold in the sidebar is all marks: the bar beside the current item (its tint,
+// icon and label stay blue), the dash before each section, the rule under the
+// brand, and the ring around the user.
+.menu-item-active::before {
+  width: 4px;
+  background-color: @ec-gold;
+}
+
+// The rule under the brand runs gold into blue, meeting the top bar's
+// blue-indigo-gold rule so the two read as one line across the window.
+.sidebar-brand {
+  position: relative;
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, @ec-gold 0%, @ec-blue 100%);
+    content: '';
+  }
+}
+
+.sidebar-avatar {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px @ec-gold;
+}
+
+// The top bar is white like the sidebar, ruled off from the page by the
+// brand's blue-indigo-gold line.
+.layout-topbar {
+  background: #fff;
+  border-bottom: 1px solid @ec-border;
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    background: linear-gradient(90deg, @ec-blue 0%, @ec-indigo 55%, @ec-gold 100%);
+    content: '';
+  }
+}
+
+/* ------------------------------------------------------------------- page */
+
+// The page: pale slate, washed with brand blue at the top the way evocloud.dev's
+// hero is, fading out before the content gets busy. It scrolls with the page.
+.layout-content {
+  background: linear-gradient(180deg, fade(@ec-blue, 8%) 0, fade(@ec-blue, 0%) 320px), #f4f6fb;
+  background-attachment: local;
+  &::-webkit-scrollbar,
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1;
+    border-radius: 3px;
+  }
+}
+
+// A page's title, marked with the gold bar that the sidebar's current item
+// carries, so the two point at the same place.
+.title-wrapper {
+  .title {
+    display: inline-flex;
+    gap: 10px;
+    align-items: center;
+    color: @ec-text;
+    font-weight: 700;
+    font-size: 22px !important;
+    letter-spacing: -0.01em;
+    &::before {
+      flex: none;
+      width: 4px;
+      height: 22px;
+      background: @ec-gold;
+      border-radius: 2px;
+      content: '';
+    }
+  }
+  .subTitle {
+    color: @ec-muted;
+  }
+}
+
+::selection {
+  color: @ec-text;
+  background: fade(@ec-gold, 35%);
+}
+
+/* ------------------------------------------------------------ components */
+
+.next-btn {
+  border-radius: 8px;
+}
+
+.next-btn.next-btn-primary:not(.next-btn-text):not(.next-btn-ghost):not([disabled]):not(.disabled) {
+  background: @ec-action;
+  border-color: transparent;
+  box-shadow: 0 1px 2px rgba(32, 76, 235, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+  &:hover,
+  &:focus {
+    background: @ec-action-hover;
+    border-color: transparent;
+  }
+}
+
+.next-input,
+.next-select .next-select-inner {
+  border-radius: 8px;
+}
+
+.next-input.next-focus {
+  border-color: @ec-blue;
+  box-shadow: 0 0 0 3px fade(@ec-blue, 16%);
+}
+
+.next-card {
+  border-color: @ec-border;
+  border-radius: @ec-radius;
+  box-shadow: @ec-shadow;
+}
+
+.resource-card {
+  border-color: @ec-border;
+  border-radius: @ec-radius;
+  box-shadow: @ec-shadow;
+  transition: box-shadow 0.15s, transform 0.15s, border-color 0.15s;
+  &:hover {
+    border-color: #c7d2fe;
+    box-shadow: @ec-shadow-lift;
+    transform: translateY(-1px);
+  }
+}
+
+// Every card leads with the brand: its icon on the blue-indigo gradient.
+.resource-card-icon {
+  color: #fff;
+  background: @ec-action;
+  border-radius: 10px;
+  box-shadow: 0 6px 14px -6px fade(@ec-blue, 70%);
+}
+
+// Components all healthy fill the bar in the brand gradient rather than green;
+// the card's status badge still says healthy, and a bar short of full keeps
+// VelaUX's warning colour, so a problem still looks like one.
+.app-components-bar .full {
+  background: @ec-action;
+}
+
+// Selected filters and views in solid brand blue.
+.health-chip.active {
+  color: #fff;
+  background: @ec-blue;
+  border-color: @ec-blue;
+  .health-chip-count {
+    color: fade(#fff, 80%);
+  }
+}
+
+.app-filter-bar-mode,
+.packages-source,
+.application-yaml-mode {
+  background: @ec-blue-50;
+  button.active {
+    color: #fff;
+    background: @ec-blue;
+    box-shadow: 0 1px 2px fade(@ec-blue, 40%);
+  }
+}
+
+// Table heads as evodash draws them: small, spaced capitals on a pale band.
+.next-table th {
+  color: @ec-muted;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  background: @ec-surface;
+}
+
+.next-table tr.hovered td,
+.next-table tr:hover td {
+  background: #f5f8ff;
+}
+
+// Tabs: the current one in ink with a gold rule, matching the sidebar's mark.
+// The weight and colour carry the state too, so it never rests on gold alone.
+.next-tabs-pure > .next-tabs-bar .next-tabs-nav-container .next-tabs-tab.active {
+  color: @ec-text;
+  font-weight: 600;
+}
+
+.next-tabs-pure > .next-tabs-bar .next-tabs-nav-container .next-tabs-tab:before {
+  border-bottom: 3px solid @ec-gold;
+  border-radius: 3px 3px 0 0;
+}
+
+.app-tabs .app-tab.active,
+.environment-bar-tabs .environment-view.active {
+  color: @ec-text;
+  font-weight: 600;
+  border-bottom-color: @ec-gold;
+}
+
+.next-pagination .next-pagination-item {
+  border-radius: 8px;
+}
+
+.next-pagination .next-pagination-item.next-current {
+  background: @ec-action;
+  border-color: transparent;
+}
+
+.next-tag {
+  border-radius: 6px;
+}
+
+// Dialogs are white throughout, topped with the gold the frame marks with.
+// VelaUX heads them in the sidebar's colours; a customised dark sidebar still
+// carries through, as before.
+.next-dialog {
+  overflow: hidden;
+  border-top: 3px solid @ec-gold;
+  border-radius: @ec-radius;
+}
+
+.next-dialog .next-dialog-header {
+  color: var(--sb-text-strong, @ec-text);
+  font-weight: 600;
+  background: var(--sb-bg, #fff);
+  border-bottom: 1px solid var(--sb-border, @ec-border);
+  border-radius: 0;
+}
+
+.next-dialog .next-dialog-close,
+.next-dialog .next-dialog-close .next-dialog-close-icon {
+  color: var(--sb-muted, @ec-muted);
+}
+
+/* ------------------------------------------------------------------ login */
+
+.login-topbar {
+  background: #fff;
+  border-bottom: 1px solid @ec-border;
+  box-shadow: none;
+  .right .vela-item,
+  .right .vela-item a {
+    color: @ec-muted;
+  }
+}
+
+// The way in: the pale slate of the page, lit by a faint blue glow behind the
+// card and an indigo one opposite, as evocloud.dev's hero is in light mode.
+.full {
+  background: radial-gradient(900px 520px at 18% 22%, fade(@ec-blue, 10%), transparent 62%),
+    radial-gradient(760px 460px at 84% 82%, fade(@ec-indigo, 9%), transparent 62%), @ec-surface-2;
+  .login-wrapper .login-card-wrapper .login-title-description {
+    color: @ec-muted;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+  }
+  .login-wrapper .login-card-wrapper .next-card-show-divider {
+    border: 1px solid @ec-border;
+    border-top: 3px solid @ec-gold;
+    border-radius: 16px;
+    box-shadow: 0 20px 48px -16px rgba(15, 23, 42, 0.18);
+  }
+  .login-wrapper .login-card-wrapper .next-card-show-divider .next-card-content .next-btn {
+    width: 100%;
+    height: 40px;
+  }
+}

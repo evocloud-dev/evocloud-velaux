@@ -2,8 +2,7 @@ import { Button, Card, Field, Form, Grid, Icon, Input } from '@alifd/next';
 import React, { Component, Fragment } from 'react';
 
 import { getDexConfig, getLoginType, isAdminConfigured, loginLocal } from '../../api/authentication';
-import LogoWhite from '../../assets/kubevela-logo-white.png';
-import Logo from '../../assets/kubevela-logo.png';
+import Logo from '../../assets/evocloud/evocloud-logo.svg';
 import { loadCustomisation } from '../../api/customisation';
 import { If } from '../../components/If';
 import SwitchLanguage from '../../components/SwitchButton/index';
@@ -165,9 +164,9 @@ export default class LoginPage extends Component<Props, State> {
           <Row className="nav-wrapper">
             <Col span="4" className="logo">
               <img
-                src={this.state.logoURL || LogoWhite}
+                src={this.state.logoURL || Logo}
                 className={this.state.logoURL ? 'login-logo-plate' : undefined}
-                title={'Make shipping applications more enjoyable.'}
+                title={'EvoCloud — Built for Secure Intranet Cloud'}
               />
             </Col>
             <div style={{ flex: '1 1 0%' }} />
@@ -197,7 +196,7 @@ export default class LoginPage extends Component<Props, State> {
                       <img src={this.state.logoURL || Logo} />
                     </div>
                     <h3 className="login-title-description">
-                      <Translation>Make shipping applications more enjoyable</Translation>
+                      <Translation>Sign in to the EvoCloud console</Translation>
                     </h3>
                     <Form
                       onSubmitCapture={(e) => {
