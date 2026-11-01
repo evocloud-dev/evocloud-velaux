@@ -3,7 +3,7 @@
     "version": "0.0.2",
     "author": "KubeVela",
     "scripts": {
-        "build": "yarn sass2less && node bin/build.js",
+        "build": "yarn sass2less && node --openssl-legacy-provider bin/build.js",
         "sass2less": "sass2less variables.scss variables.less"
     },
     "files": [
