@@ -1,3 +1,8 @@
+# evocloud-velaux
+Cloudnative app deployment and self-service UI Interface
+
+EvoCloud's build of [VelaUX](https://github.com/kubevela/velaux), the KubeVela web portal, with the EvoCloud theme. VelaUX's own README follows.
+
 ![alt](docs/images/KubeVela-03.png)
 
 [![Go Report Card](https://goreportcard.com/badge/github.com/kubevela/velaux)](https://goreportcard.com/report/github.com/kubevela/velaux)
