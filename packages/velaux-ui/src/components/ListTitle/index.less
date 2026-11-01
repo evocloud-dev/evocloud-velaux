@@ -1,0 +1,29 @@
+.title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding: 4px 0 16px;
+  line-height: 36px;
+  .title {
+    color: #0f172a;
+    font-weight: 600;
+    font-size: 20px !important;
+  }
+  .subTitle {
+    margin-left: 12px;
+    color: #64748b;
+  }
+  .float-right {
+    display: flex;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 719px) and (min-width: 480px) {
+  .title-wrapper {
+    .subTitle {
+      display: none;
+    }
+  }
+}

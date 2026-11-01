@@ -1,0 +1,63 @@
+.list-content {
+  min-height: calc(100vh - 60px);
+  .production-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px;
+    color: #204ceb;
+    font-size: 16px;
+  }
+  .create-btn {
+    margin: 16px 0;
+    text-align: right;
+  }
+  .next-table .next-table-header th .next-table-cell-wrapper {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .next-table-cell.last .next-table-cell-wrapper {
+    text-align: left;
+    .next-btn-text {
+      padding-left: 0;
+    }
+  }
+  .next-table-header-icon {
+    margin-top: 2px;
+  }
+  .isReadyColor {
+    color: #20ad7e;
+  }
+  .isNotReady {
+    color: #f00;
+  }
+}
+
+// The configs list: a search, a template filter and refresh above one table.
+.configs-toolbar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+  .configs-search {
+    width: 360px;
+  }
+  .configs-search-icon {
+    margin-left: 10px;
+    color: #94a3b8;
+  }
+  .configs-template-filter {
+    width: 280px;
+  }
+}
+
+.config-template {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  img {
+    width: 18px;
+    height: 18px;
+  }
+}
