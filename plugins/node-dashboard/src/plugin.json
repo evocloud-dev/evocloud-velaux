@@ -8,7 +8,7 @@
     ],
     "description": "Kubernetes node dashboard",
     "author": {
-      "name": "KubeVela"
+      "name": "EvoCloud"
     },
     "logos": {
       "small": "img/logo.svg",

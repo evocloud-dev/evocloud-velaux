@@ -3,7 +3,7 @@ import * as React from 'react';
 
 // use the declaration file
 import 'dagre-compound';
-import kubevela from '../../assets/KubeVela-01.svg';
+import evocloudMark from '../../assets/evocloud/evocloud-mark.svg';
 import kubernetes from '../../assets/kubernetes.svg';
 import pod from '../../assets/resources/pod.svg';
 import i18n from '../../i18n';
@@ -170,7 +170,7 @@ function renderAppNode(props: TreeGraphProps, id: string, node: GraphNode) {
       }}
     >
       <div className={classNames('icon')}>
-        <img src={kubevela} />
+        <img src={evocloudMark} />
       </div>
       <div className={classNames('name')}>
         <span>{node.resource.name}</span>

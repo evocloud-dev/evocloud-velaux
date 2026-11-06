@@ -267,8 +267,8 @@ class Header extends Component<Props, State> {
           </Permission>
           <a
             className="sidebar-footer-item"
-            title="KubeVela Documents"
-            href="https://kubevela.io"
+            title="EvoCloud Documents"
+            href="https://www.evocloud.dev/documentation"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -337,10 +337,10 @@ class Header extends Component<Props, State> {
           <CloudShell />
         </If>
         {(customisation.logoURL || customisation.iconURL) && (
-          <a className="powered-by" href="https://kubevela.io" target="_blank" rel="noopener noreferrer">
+          <a className="powered-by" href="https://www.evocloud.dev" target="_blank" rel="noopener noreferrer">
             <Translation>Powered by</Translation>
             <img src={logoMark} alt="" />
-            KubeVela
+            EvoCloud
           </a>
         )}
       </div>

@@ -132,7 +132,7 @@ const PackageDetail = (props: Props) => {
         <BsBoxSeam className="package-head-icon" />
         <h1>{detail.name}</h1>
         {detail.builtin ? (
-          <StatusBadge tone="neutral" label="Built-in" title={i18n.t('Part of KubeVela').toString()} />
+          <StatusBadge tone="neutral" label="Built-in" title={i18n.t('Part of EvoCloud').toString()} />
         ) : (
           <span className="package-namespace">{detail.namespace}</span>
         )}
@@ -162,7 +162,7 @@ const PackageDetail = (props: Props) => {
               <span className="package-protocol">{detail.provider.protocol}</span> {detail.provider.endpoint}
             </span>
           ) : (
-            <Translation>{detail.builtin ? 'Runs in KubeVela' : 'CUE only, no provider'}</Translation>
+            <Translation>{detail.builtin ? 'Runs in EvoCloud' : 'CUE only, no provider'}</Translation>
           )}
         </div>
         {detail.provider?.headers && detail.provider.headers.length > 0 && (

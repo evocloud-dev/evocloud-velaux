@@ -1,8 +1,8 @@
 name: velaux
 version: v1.8.0-rc.3
-description: KubeVela User Experience (UX). An extensible, application-oriented delivery and management Platform.
-icon: https://static.kubevela.net/images/logos/KubeVela%20-03.png
-url: https://kubevela.io
+description: EvoCloud User Experience (UX). An extensible, application-oriented delivery and management Platform.
+icon: https://www.evocloud.dev/favicon-310x310.png
+url: https://www.evocloud.dev
 
 tags:
   - Official

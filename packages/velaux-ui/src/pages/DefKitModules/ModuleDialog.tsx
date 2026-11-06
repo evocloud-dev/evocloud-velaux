@@ -123,7 +123,7 @@ export const ModuleDialog = (props: { module?: DefKitModule; onClose: () => void
             dataSource={repositoryOptions(repos)}
             hasClear
             style={{ width: '100%' }}
-            placeholder="https://github.com/kubevela/vela-go-definitions"
+            placeholder="https://github.com/your-org/your-definitions"
           />
         </Form.Item>
         <Form.Item

@@ -297,7 +297,7 @@ func generateDexConfig(ctx context.Context, kubeClient client.Client, update *mo
 	// This is the title that the dex login page.
 	// It will be: Log in to KubeVela
 	if dexConfig.Frontend.Issuer == "" {
-		dexConfig.Frontend.Issuer = "KubeVela"
+		dexConfig.Frontend.Issuer = "EvoCloud"
 	}
 	config, err := model.NewJSONStructByStruct(dexConfig)
 	if err != nil {
