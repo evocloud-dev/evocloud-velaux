@@ -129,7 +129,7 @@ func (c *clusterServiceImpl) preAddLocalCluster(ctx context.Context) error {
 	}
 	localCluster := &model.Cluster{
 		Name:         multicluster.ClusterLocalName,
-		Description:  "The hub manage cluster where KubeVela runs on.",
+		Description:  "The hub manage cluster where EvoCloud runs on.",
 		Status:       model.ClusterStatusHealthy,
 		APIServerURL: cfg.Host + cfg.APIPath,
 	}

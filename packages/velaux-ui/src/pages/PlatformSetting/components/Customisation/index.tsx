@@ -161,7 +161,7 @@ class CustomisationCard extends React.Component<{}, State> {
             <Input
               value={pageTitle}
               maxLength={100}
-              placeholder="KubeVela-Make shipping applications more enjoyable."
+              placeholder="EvoCloud-Make shipping applications more enjoyable."
               onChange={(v: string) => this.setState({ pageTitle: v })}
               hasClear
             />

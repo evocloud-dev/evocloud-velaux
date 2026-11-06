@@ -146,7 +146,7 @@ class Addons extends React.Component<Props, State> {
       <div>
         <ListTitle
           title="Addons and VelaUX Plugins"
-          subTitle="Manages extended platform capabilities for KubeVela and VelaUX."
+          subTitle="Manages extended platform capabilities for EvoCloud and VelaUX."
         />
 
         <Tab
