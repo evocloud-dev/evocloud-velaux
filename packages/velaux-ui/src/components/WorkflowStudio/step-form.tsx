@@ -13,7 +13,6 @@ import { StepSelect } from '../../extends/StepSelect';
 import i18n from '../../i18n';
 import type { DefinitionDetail, ExpressionStep, WorkflowStepBase } from '@velaux/data';
 import type { ExpressionEnv } from '../../extends/ExpressionEditor';
-import { replaceUrl } from '../../utils/common';
 import DrawerWithFooter from '../Drawer';
 import { If } from '../If';
 import { Translation } from '../Translation';
@@ -24,6 +23,13 @@ import { ConditionInput } from './condition-input';
 import { InputItems } from './input-item';
 import { OutputItems } from './output-item';
 import { BiCodeBlock, BiLaptop } from 'react-icons/bi';
+
+// ReferenceLink is a field's help: a link to its reference page.
+const ReferenceLink = ({ href }: { href: string }) => (
+  <a href={href} target="_blank" rel="noopener noreferrer">
+    <Translation>Reference</Translation>
+  </a>
+);
 
 type Props = {
   onUpdate: (data: WorkflowStepBase) => void;
@@ -271,11 +277,7 @@ class StepForm extends Component<Props, State> {
               <FormItem
                 label={<Translation>If</Translation>}
                 help={
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: replaceUrl('Reference: http://kubevela.net/docs/end-user/workflow/if-condition'),
-                    }}
-                  />
+                  <ReferenceLink href="http://kubevela.net/docs/end-user/workflow/if-condition" />
                 }
               >
                 <ConditionInput
@@ -294,11 +296,7 @@ class StepForm extends Component<Props, State> {
                 <FormItem
                   label={<Translation>Inputs</Translation>}
                   help={
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: replaceUrl('Reference: http://kubevela.net/docs/end-user/workflow/inputs-outputs'),
-                      }}
-                    />
+                    <ReferenceLink href="http://kubevela.net/docs/end-user/workflow/inputs-outputs" />
                   }
                 >
                   <InputItems {...init('inputs')} />
@@ -310,11 +308,7 @@ class StepForm extends Component<Props, State> {
                 <FormItem
                   label={<Translation>Outputs</Translation>}
                   help={
-                    <div
-                      dangerouslySetInnerHTML={{
-                        __html: replaceUrl('Reference: http://kubevela.net/docs/end-user/workflow/inputs-outputs'),
-                      }}
-                    />
+                    <ReferenceLink href="http://kubevela.net/docs/end-user/workflow/inputs-outputs" />
                   }
                 >
                   <OutputItems {...init('outputs')} />

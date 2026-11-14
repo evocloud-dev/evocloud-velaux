@@ -4,7 +4,7 @@ import React from 'react';
 
 // Why each scope matters, as KubeVela applies a policy of it.
 const scopeHelp: Record<string, string> = {
-  Builtin: 'Consumed by KubeVela directly',
+  Builtin: 'Consumed by EvoCloud directly',
   Workload: "Rendered with the Application's components",
   Application: 'Applied to the Application as a whole, before it renders',
 };

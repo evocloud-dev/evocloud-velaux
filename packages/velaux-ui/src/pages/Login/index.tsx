@@ -172,7 +172,7 @@ export default class LoginPage extends Component<Props, State> {
             <div style={{ flex: '1 1 0%' }} />
             <div className="right">
               <div className="vela-item">
-                <a title="KubeVela Documents" href="https://kubevela.io" target="_blank" rel="noopener noreferrer">
+                <a title="EvoCloud Documents" href="https://www.evocloud.dev/documentation" target="_blank" rel="noopener noreferrer">
                   <AiOutlineQuestionCircle size={18} />
                 </a>
               </div>

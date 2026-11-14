@@ -357,4 +357,10 @@
     width: 100%;
     height: 40px;
   }
+  // VelaUX fixes the form at 210px inside a card that hides overflow, so a
+  // validation message under a field pushed the Sign in button out of sight.
+  // The form takes the height of what it holds instead.
+  .login-wrapper .login-card-wrapper .next-card-show-divider .next-form {
+    height: auto !important;
+  }
 }

@@ -534,7 +534,7 @@ class AddonDetailDialog extends React.Component<Props, State> {
                   {addonDetailInfo?.system && (
                     <span className="warning-text">
                       This version requirements: (
-                      {addonDetailInfo?.system.vela ? `KubeVela: ${addonDetailInfo?.system.vela}` : ''}
+                      {addonDetailInfo?.system.vela ? `EvoCloud: ${addonDetailInfo?.system.vela}` : ''}
                       {addonDetailInfo?.system.kubernetes ? ` Kubernetes: ${addonDetailInfo?.system.kubernetes}` : ''})
                     </span>
                   )}

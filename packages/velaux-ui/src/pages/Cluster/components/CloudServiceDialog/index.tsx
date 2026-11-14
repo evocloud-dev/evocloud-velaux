@@ -260,7 +260,7 @@ class CloudServiceDialog extends React.Component<Props, State> {
 
     const providerList = [{ value: 'aliyun', label: 'Aliyun ACK' }];
     const notice =
-      "KubeVela won't save your AK/SK and we strongly recommend allocating the smallest available permission set";
+      "EvoCloud won't save your AK/SK and we strongly recommend allocating the smallest available permission set";
     return (
       <React.Fragment>
         <Dialog

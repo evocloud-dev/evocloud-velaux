@@ -29,8 +29,8 @@ const ProviderPill = (props: { pkg: PackageBase }) => {
   }
   if (pkg.builtin) {
     return (
-      <span className="provider-pill builtin" title={i18n.t('Runs in KubeVela').toString()}>
-        KubeVela
+      <span className="provider-pill builtin" title={i18n.t('Runs in EvoCloud').toString()}>
+        EvoCloud
       </span>
     );
   }
